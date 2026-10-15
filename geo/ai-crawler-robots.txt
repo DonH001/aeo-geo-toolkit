@@ -1,0 +1,33 @@
+# Sample robots.txt rules for AI search and answer engines.
+# Decide per bot whether to allow it. Allowing a search bot lets that
+# product find and cite your pages; it is not a guarantee of citations.
+# Verify current bot names in each vendor's documentation before deploying.
+
+# OpenAI: search bot (ChatGPT search results) and training bot are separate
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+# Google: controls use of content in Gemini training, not Search itself
+User-agent: Google-Extended
+Allow: /
+
+# Everyone else
+User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Sitemap: https://example.com/sitemap.xml
+
+# Reminder: also check your CDN/firewall (e.g. Cloudflare bot rules).
+# A permissive robots.txt does nothing if the host blocks these crawlers.
